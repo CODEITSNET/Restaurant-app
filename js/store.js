@@ -44,19 +44,19 @@ document.getElementById('cart-info').addEventListener('click', function(){
     btn.addEventListener("click", function(event){
    
      if (event.target.parentElement.classList.contains("store-item-icon")){
-       let fullPath = event.target.parentElement.previousElementSibling.src;
-       let pos = fullPath.indexOf("img") + 3;
-       let partPath = fullPath.slice(pos);
+       const fullPath = event.target.parentElement.previousElementSibling.src;
+       const pos = fullPath.indexOf("img") + 3;
+       const partPath = fullPath.slice(pos);
        
 
        const item = {};
        item.img = `img-cart${partPath}`;
 
-       let name = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
+       const name = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
        item.name = name;
-       let price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
+       const price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
        
-       let finalPrice =price.slice(1).trim();
+       const finalPrice =price.slice(1).trim();
 
        item.price = finalPrice;
 
@@ -80,7 +80,9 @@ document.getElementById('cart-info').addEventListener('click', function(){
        const total = document.querySelector('.cart-total-container');
 
        cart.insertBefore(cartItem, total);
-       alert('item added to the cart');
+       
+       let itemImg = event.target.parentElement.previousElementSibling;
+       itemImg.classList.add('opacity');
        showTotals();
      }
     });

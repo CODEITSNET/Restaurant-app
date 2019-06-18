@@ -213,3 +213,7 @@ body{
 .cart-item-price {
   font-size: 0.8rem;
 }
+
+.opacity {
+  opacity: 0.3;
+  }
