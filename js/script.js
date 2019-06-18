@@ -40,8 +40,8 @@ $(window).scroll(function(){
 
   // repples
   $("#header, .info").ripples({
-    dropRadius: 25,
-    perturbance: 0.6,
+    dropRadius: 20,
+    perturbance: 0.03,
   });
 
   // magnific popup
